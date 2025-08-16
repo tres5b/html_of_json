@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "name": "HTML of JSON",
+      "path": ".",
+    },
+  ],
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode"],
+  },
+}

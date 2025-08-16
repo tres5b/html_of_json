@@ -1,0 +1,22 @@
+{
+  "name": "html_of_json",
+  "version": "1.0.0",
+  "description": "A JSON components to HTML template engine.",
+  "main": "index.js",
+  "bin": {
+    "html_of_json": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ross online solutions",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-node": "^11.1.0",
+    "globals": "^16.3.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.6.2"
+  }
+}
