@@ -1,0 +1,47 @@
+{
+  "type": "html",
+  "lang": "en",
+  "innerHTML": [
+    {
+      "type": "head",
+      "innerHTML": [
+        {
+          "type": "meta",
+          "charset": "UTF-8"
+        },
+        {
+          "type": "meta",
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "type": "title",
+          "innerHTML": ["html_of_json"]
+        },
+        {
+          "type": "link",
+          "rel": "stylesheet",
+          "href": "style.css"
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "innerHTML": [
+        {
+          "type": "component",
+          "include": "div.json",
+          "args": {
+            "div_class": "container",
+            "pre_id": "json-display",
+            "pre_class": "code-block"
+          }
+        },
+        {
+          "type": "script",
+          "src": "script.js"
+        }
+      ]
+    }
+  ]
+}

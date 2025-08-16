@@ -1,0 +1,17 @@
+{
+  "type": "div",
+  "class": "${div_class}",
+  "innerHTML": [
+    {
+      "type": "h1",
+      "innerHTML": "html_of_json"
+    },
+    {
+      "type": "pre",
+      "id": "${pre_id}",
+      "class": "${pre_class}",
+      "readonly": "",
+      "innerHTML": ""
+    }
+  ]
+}
