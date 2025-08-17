@@ -108,3 +108,17 @@ test('Empty innerHTML', () => {
 
   expect(html).toContain('<p></p>');
 });
+
+test('Empty property', () => {
+  var e = { type: 'pre', readonly: '', innerHTML: '' };
+
+  var html = visit(
+    e,
+    () => {
+      return {};
+    },
+    {},
+  );
+
+  expect(html).toContain('<pre readonly></pre>');
+});

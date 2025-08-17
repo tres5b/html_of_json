@@ -27,6 +27,18 @@ export function visit(obj, loader, args) {
     }
   }
 
+  // forwarding error correction
+  {
+    if (typeof obj.innerHTML == 'undefined') {
+      switch (obj.type) {
+        case 'script':
+        case 'html':
+          obj.innerHTML = '';
+        default: //ignore
+      }
+    }
+  }
+
   // handle component
   if (obj.type == 'component') {
     return handle_component(obj, loader);
@@ -44,7 +56,11 @@ export function visit(obj, loader, args) {
       case 'innerHTML':
         continue;
       default: {
-        res += ` ${key}="${obj[key]}"`;
+        if (obj[key] != '') {
+          res += ` ${key}="${obj[key]}"`;
+        } else {
+          res += ` ${key}`;
+        }
       }
     }
   }

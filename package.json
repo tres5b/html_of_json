@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "example": "cd example && npx html_of_json root.json"
   },
   "author": "ross online solutions",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import { visit } from './html_of_json';
+import { visit } from './html_of_json.js';
 import fs from 'fs';
 
 function load_component(filePath) {
