@@ -1,6 +1,5 @@
 import { visit } from './html_of_json';
 import fs from 'fs';
-import path from 'path';
 
 function load_component(filePath) {
   const raw = fs.readFileSync(filePath, 'utf-8');

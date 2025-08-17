@@ -28,11 +28,11 @@ export function visit(obj, loader, args) {
 
   for (const key in obj) {
     switch (key) {
-      case 'tag':
+      case 'type':
       case 'innerHTML':
         continue;
       default: {
-        res += `${key}=" ${obj[key]}"`;
+        res += ` ${key}="${obj[key]}"`;
       }
     }
   }

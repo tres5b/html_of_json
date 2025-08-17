@@ -7,7 +7,8 @@
     "html_of_json": "bin/cli.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "lint": "eslint ."
   },
   "author": "ross online solutions",
   "license": "MIT",
@@ -18,5 +19,6 @@
     "globals": "^16.3.0",
     "jest": "^29.7.0",
     "prettier": "^3.6.2"
-  }
+  },
+  "type": "module"
 }
