@@ -32,4 +32,5 @@ if (typeof outp == 'undefined') {
 }
 
 // else print to file
+res += '\n';
 fs.writeFileSync(outp, res);

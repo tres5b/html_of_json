@@ -140,8 +140,8 @@ test('Project2', () => {
 
   var html = visit(root, loader, {});
 
-  var js1 = '<script src="js/script1.js" />';
-  var js2 = '<script src="js/script2.js" />';
+  var js1 = '<script src="js/script1.js"></script>';
+  var js2 = '<script src="js/script2.js"></script>';
   var css1 = '<link rel="stylesheet" href="css/style.css" />';
 
   var root_component = `<html><head>${js1} ${js2} ${css1}</head></html>`;
