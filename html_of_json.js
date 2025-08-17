@@ -13,6 +13,18 @@ export function visit(obj, loader, args) {
       // try to replace
       obj[key] = obj[key].replace(/\$\{([^]+)\}/g, (_, key) => args[key] ?? '');
     }
+
+    // if key == 'args' then replace all args
+    if (key == 'args') {
+      for (const arg_key in obj[key]) {
+        if (typeof obj[key][arg_key] == 'string') {
+          obj[key][arg_key] = obj[key][arg_key].replace(
+            /\$\{([^]+)\}/g,
+            (_, key) => args[key] ?? '',
+          );
+        }
+      }
+    }
   }
 
   // handle component
