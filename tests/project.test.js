@@ -82,3 +82,69 @@ test('Project1', () => {
 
   expect(html).toContain(root_component);
 });
+
+test('Project2', () => {
+  var js = {
+    type: 'script',
+    src: 'js/${module}.js',
+  };
+
+  var css = {
+    type: 'link',
+    rel: 'stylesheet',
+    href: 'css/${style}.css',
+  };
+
+  var root = {
+    type: 'html',
+    innerHTML: [
+      {
+        type: 'head',
+        innerHTML: [
+          {
+            type: 'component',
+            include: 'js.json',
+            args: {
+              module: 'script1',
+            },
+          },
+          {
+            type: 'component',
+            include: 'js.json',
+            args: {
+              module: 'script2',
+            },
+          },
+          {
+            type: 'component',
+            include: 'css.json',
+            args: {
+              style: 'style',
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  var loader = (file) => {
+    switch (file) {
+      case 'css.json':
+        return deep_clone(css);
+      case 'js.json':
+        return deep_clone(js);
+      default:
+        return {};
+    }
+  };
+
+  var html = visit(root, loader, {});
+
+  var js1 = '<script src="js/script1.js" />';
+  var js2 = '<script src="js/script2.js" />';
+  var css1 = '<link rel="stylesheet" href="css/style.css" />';
+
+  var root_component = `<html><head>${js1} ${js2} ${css1}</head></html>`;
+
+  expect(html).toContain(root_component);
+});
