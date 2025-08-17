@@ -10,3 +10,7 @@ export function render(filePath) {
   var root = load_component(filePath);
   return visit(root, load_component, {});
 }
+
+export function renderFrom(obj, loader, args) {
+  return visit(obj, loader, args);
+}
