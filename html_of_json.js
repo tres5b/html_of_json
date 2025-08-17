@@ -50,7 +50,11 @@ export function visit(obj, loader, args) {
   // else handle all elements in innerHTML
   res += '>';
   for (const e in innerHTML) {
-    res += visit(innerHTML[e], loader, args);
+    res += visit(innerHTML[e], loader, args) + ' ';
+  }
+
+  if (res.charAt(res.length - 1) == ' ') {
+    res = res.substring(0, res.length - 1);
   }
 
   res += `</${tag}>`;

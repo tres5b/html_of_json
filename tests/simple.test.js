@@ -94,3 +94,17 @@ test(`Stylesheet`, () => {
 
   expect(html).toContain('<link rel="stylesheet" href="style.css" />');
 });
+
+test('Empty innerHTML', () => {
+  var e = { type: 'p', innerHTML: '' };
+
+  var html = visit(
+    e,
+    () => {
+      return {};
+    },
+    {},
+  );
+
+  expect(html).toContain('<p></p>');
+});
