@@ -14,7 +14,7 @@
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/rossonlinesolutions/html_of_json.git
+git clone https://github.com/tres5b/html_of_json.git
 cd html_of_json
 npm install
 ```
